@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Функція для введення елементів масиву
 void inputArray(int **arr, int *size) {
     printf("Введіть кількість елементів масиву: ");
     scanf("%d", size);
@@ -19,7 +18,6 @@ void inputArray(int **arr, int *size) {
     }
 }
 
-// Функція для аналізу масиву (знаходження суми та середнього в інтервалі)
 void analyzeArray(int *arr, int size, int lower, int upper, int *sum, double *average, int *count) {
     *sum = 0;
     *count = 0;
@@ -43,26 +41,21 @@ int main() {
     int *array1 = NULL, *array2 = NULL, *array3 = NULL;
     int size1, size2, size3;
     int lower, upper;
-    
-    // Введення інтервалу
+
     printf("Введіть нижню межу інтервалу: ");
     scanf("%d", &lower);
     printf("Введіть верхню межу інтервалу: ");
     scanf("%d", &upper);
-    
-    // Масив 1
+
     printf("\nМасив 1:\n");
     inputArray(&array1, &size1);
-    
-    // Масив 2
+
     printf("\nМасив 2:\n");
     inputArray(&array2, &size2);
-    
-    // Масив 3
+
     printf("\nМасив 3:\n");
     inputArray(&array3, &size3);
-    
-    // Аналіз масивів
+
     int sum1, sum2, sum3;
     double avg1, avg2, avg3;
     int count1, count2, count3;
@@ -70,14 +63,12 @@ int main() {
     analyzeArray(array1, size1, lower, upper, &sum1, &avg1, &count1);
     analyzeArray(array2, size2, lower, upper, &sum2, &avg2, &count2);
     analyzeArray(array3, size3, lower, upper, &sum3, &avg3, &count3);
-    
-    // Виведення результатів
+
     printf("\nРезультати:\n");
     printf("Масив 1: Сума = %d, Середнє = %.2f, Кількість елементів в інтервалі = %d\n", sum1, avg1, count1);
     printf("Масив 2: Сума = %d, Середнє = %.2f, Кількість елементів в інтервалі = %d\n", sum2, avg2, count2);
     printf("Масив 3: Сума = %d, Середнє = %.2f, Кількість елементів в інтервалі = %d\n", sum3, avg3, count3);
-    
-    // Звільнення пам'яті
+
     free(array1);
     free(array2);
     free(array3);
